@@ -5,7 +5,7 @@
   <link href="/azure-cert-prep/atom.xml" rel="self"/>
   
   <link href="https://justinyoo.github.io/azure-cert-prep/"/>
-  <updated>2017-01-10T03:20:36.384Z</updated>
+  <updated>2017-01-10T11:48:29.000Z</updated>
   <id>https://justinyoo.github.io/azure-cert-prep/</id>
   
   <author>
@@ -16,17 +16,118 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AZURE202x Microsoft Azure Virtual Machines - Module 2</title>
+    <link href="https://justinyoo.github.io/azure-cert-prep/2017/01/11/azure202x-microsoft-virtual-machines-module-2/"/>
+    <id>https://justinyoo.github.io/azure-cert-prep/2017/01/11/azure202x-microsoft-virtual-machines-module-2/</id>
+    <published>2017-01-10T14:00:00.000Z</published>
+    <updated>2017-01-10T11:48:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 2 부분에 대한 정리입니다.</p>
+</blockquote>
+<h2 id="Azure-VM-생성시-고려-요소"><a href="#Azure-VM-생성시-고려-요소" class="headerlink" title="Azure VM 생성시 고려 요소"></a>Azure VM 생성시 고려 요소</h2><ul>
+<li>스토리지: 가격, 지역, 설정</li>
+<li>디스크: 사이즈, persistence, 캐싱</li>
+<li>Compute: 용량</li>
+<li>가용성: 업타임 요구사항, 지역 분포, SLA, 접근성</li>
+<li>비용: 스토리지, Compute</li>
+</ul>
+<p>최우선적인 고려사항은 VM과 제반 리소스에 대해 얼마만큼 비용을 지불할 의사가 있는지임.</p>
+<h2 id="Azure-VM-생성-방법"><a href="#Azure-VM-생성-방법" class="headerlink" title="Azure VM 생성 방법"></a>Azure VM 생성 방법</h2><ul>
+<li>포탈 이용하는 방법</li>
+<li>ARM 템플릿 이용하는 방법</li>
+<li>Azure 파워셸 이용하는 방법</li>
+<li>비주얼 스튜디오 이용하는 방법</li>
+</ul>
+<h2 id="Steps-Creating-Azure-VM-via-Portal"><a href="#Steps-Creating-Azure-VM-via-Portal" class="headerlink" title="Steps Creating Azure VM via Portal"></a>Steps Creating Azure VM via Portal</h2><ul>
+<li>VM 이미지/디스크 선택</li>
+<li>중요 정보 제공 - 호스트, username/password</li>
+<li>옵션 정보 제공 - 도메인 멤버쉽, 가상 네트웍, 스토리지, 클라우드 서비스, 가용성 셋</li>
+<li>VM 프로비저닝</li>
+</ul>
+<h2 id="Creating-Azure-VM-via-PowerShell"><a href="#Creating-Azure-VM-via-PowerShell" class="headerlink" title="Creating Azure VM via PowerShell"></a>Creating Azure VM via PowerShell</h2><ol>
+<li>Quick Mode: <code>New-AzureQuickVM -Windows -ServiceName &quot;[Service Name]&quot; -Name &quot;[VM Name]&quot; -ImageName &quot;[Image]&quot; -Password &quot;[Admin Password]&quot;</code></li>
+<li>Advanced Mode: <code>New-AzureVMConfig | AddAzureProvisioningConfig | Add-AzureDataDisk | AddAzureEndPoint | Add-AzureVM</code></li>
+</ol>
+<h3 id="Comparison-between-Methods"><a href="#Comparison-between-Methods" class="headerlink" title="Comparison between Methods"></a>Comparison between Methods</h3><ul>
+<li>Both support Windows and Linux VMs</li>
+<li>Both create VMs from image</li>
+<li><p>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</p>
+</li>
+<li><p>Advanced mode only:</p>
+<ul>
+<li>Creates VM from OS disk</li>
+<li>Specifies AD domain join info</li>
+<li>Creates new or attaches existing disks</li>
+<li>Disables Windows Update</li>
+<li>Specify time zone</li>
+<li>Specify static IP</li>
+<li>Specify reserved IP</li>
+</ul>
+</li>
+</ul>
+<h3 id="ASM-vs-ARM"><a href="#ASM-vs-ARM" class="headerlink" title="ASM vs ARM"></a>ASM vs ARM</h3><ul>
+<li>ASM uses pipe for each PS commands</li>
+<li>ARM uses variable to run PS commands</li>
+<li>All ARM PS commands has <code>VM</code> on their names</li>
+</ul>
+<h2 id="Creating-Azure-VM-via-ARM-Templates"><a href="#Creating-Azure-VM-via-ARM-Templates" class="headerlink" title="Creating Azure VM via ARM Templates"></a>Creating Azure VM via ARM Templates</h2><ul>
+<li>Create template file</li>
+<li>Create parameters file</li>
+<li>Create resource group</li>
+<li><p>Deploy template</p>
+</li>
+<li><p>ARM template file size is allowed up to 1MB</p>
+</li>
+<li>ARM parameters file size is allowed up to 64KB</li>
+</ul>
+<h2 id="Creating-Azure-VM-from-Custom-Images"><a href="#Creating-Azure-VM-from-Custom-Images" class="headerlink" title="Creating Azure VM from Custom Images"></a>Creating Azure VM from Custom Images</h2><ul>
+<li>Prepare VM: <code>sysprep</code></li>
+<li>Prepare VM in .VHD: Generation 1 VHD, fixed size</li>
+<li>Create storage container</li>
+<li>Upload .VHD: <code>Add-AzureRmVhd</code></li>
+<li>Create VM with .VHD</li>
+</ul>
+<h2 id="Creating-Azure-VM-for-Linux"><a href="#Creating-Azure-VM-for-Linux" class="headerlink" title="Creating Azure VM for Linux"></a>Creating Azure VM for Linux</h2><ul>
+<li>Azure SLA only applies to endorsed distros</li>
+<li>Non-endorsed distros may run on Azure, as long as they meet requirements</li>
+<li>Endorsed distros<ul>
+<li>CentOS 6.3+</li>
+<li>CoreOS 494.4.0+</li>
+<li>Debian 7.9+, 8.2+</li>
+<li>Oracle Linux 6.4+, 7.0+</li>
+<li>RHEL 6.7+, 7.1+</li>
+<li>SUSE Linux Enterprise SLES 11 SP4, SLES 12+, SLES for SAP 11.3+</li>
+<li>Open SUSE 13.2+</li>
+<li>Ubuntu 12.04, 14.04, 16.04</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://openedx.microsoft.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://openedx.microsoft.com&lt;/a&gt; 에서 제공하는 무료 강좌인 &lt;a h
+    
+    </summary>
+    
+    
+      <category term="azure202x" scheme="https://justinyoo.github.io/azure-cert-prep/tags/azure202x/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AZURE202x Microsoft Azure Virtual Machines - Module 1</title>
     <link href="https://justinyoo.github.io/azure-cert-prep/2017/01/10/azure202x-microsoft-virtual-machines-module-1/"/>
     <id>https://justinyoo.github.io/azure-cert-prep/2017/01/10/azure202x-microsoft-virtual-machines-module-1/</id>
     <published>2017-01-10T04:40:11.000Z</published>
-    <updated>2017-01-10T03:20:36.384Z</updated>
+    <updated>2017-01-10T08:41:31.287Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 1 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2>Virtual Machines On-Prem vs On-Azure</h2>
-<table>
+<h2 id="Virtual-Machines-On-Prem-vs-On-Azure"><a href="#Virtual-Machines-On-Prem-vs-On-Azure" class="headerlink" title="Virtual Machines On-Prem vs On-Azure"></a>Virtual Machines On-Prem vs On-Azure</h2><table>
 <thead>
 <tr>
 <th>특징</th>
@@ -72,35 +173,26 @@
 </tr>
 </tbody>
 </table>
-<h2>Azure VM 에 적합한 용도</h2>
-<ul>
+<h2 id="Azure-VM-에-적합한-용도"><a href="#Azure-VM-에-적합한-용도" class="headerlink" title="Azure VM 에 적합한 용도"></a>Azure VM 에 적합한 용도</h2><ul>
 <li>Highly available service</li>
 <li>Unpredictable growth or short-term increased</li>
 <li>Spiking workloads</li>
 <li>Steady workloads</li>
 <li>Periodic workloads</li>
 </ul>
-<h2>Azure VM 에 적합하지 않은 용도</h2>
-<ul>
+<h2 id="Azure-VM-에-적합하지-않은-용도"><a href="#Azure-VM-에-적합하지-않은-용도" class="headerlink" title="Azure VM 에 적합하지 않은 용도"></a>Azure VM 에 적합하지 않은 용도</h2><ul>
 <li>Low volume or limited growth</li>
-<li>Regulated environment – hybrid might be suitable</li>
+<li>Regulated environment &ndash; hybrid might be suitable</li>
 </ul>
-<h2>Azure VM 이 지원하지 않는 기능들</h2>
-<ul>
-<li>
-<p>Multipath I/O</p>
+<h2 id="Azure-VM-이-지원하지-않는-기능들"><a href="#Azure-VM-이-지원하지-않는-기능들" class="headerlink" title="Azure VM 이 지원하지 않는 기능들"></a>Azure VM 이 지원하지 않는 기능들</h2><ul>
+<li>Multipath I/O</li>
+<li><p>Network Load Balancing</p>
 </li>
-<li>
-<p>Network Load Balancing</p>
+<li><p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
 </li>
-<li>
-<p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
+<li><p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
 </li>
-<li>
-<p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
-</li>
-<li>
-<p>지원하는 Windows Server Role:</p>
+<li><p>지원하는 Windows Server Role:</p>
 <ul>
 <li>Application Server Role</li>
 <li>Web Server Role</li>
@@ -109,8 +201,7 @@
 </ul>
 </li>
 </ul>
-<h2>Azure VM 사이즈</h2>
-<table>
+<h2 id="Azure-VM-사이즈"><a href="#Azure-VM-사이즈" class="headerlink" title="Azure VM 사이즈"></a>Azure VM 사이즈</h2><table>
 <thead>
 <tr>
 <th>Level</th>
@@ -147,8 +238,7 @@
 <li><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables" target="_blank" rel="external">https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables</a> 꼭 읽어볼 것</li>
 <li>ACU (Azure Compute Unit) 는 A1 사이즈를 100으로 놓고 다른 사이즈의 SKU를 비교함.</li>
 </ul>
-<h2>Azure Cost Estimator Tool</h2>
-<ul>
+<h2 id="Azure-Cost-Estimator-Tool"><a href="#Azure-Cost-Estimator-Tool" class="headerlink" title="Azure Cost Estimator Tool"></a>Azure Cost Estimator Tool</h2><ul>
 <li>기존 하드웨어와 장비를 15분 정도 스캔</li>
 <li>가장 잘 맞는 VM 사이즈 추천</li>
 <li>각 인스턴스당 30일 기준 비용 산정</li>
