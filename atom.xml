@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Azure Cert Preppies</title>
   <subtitle>Azure 자격증 준비하기</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/azure-cert-prep/atom.xml" rel="self"/>
   
   <link href="https://justinyoo.github.io/azure-cert-prep/"/>
   <updated>2017-01-10T03:20:36.384Z</updated>
@@ -25,8 +25,7 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 1 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2>Virtual Machines On-Prem vs On-Azure</h2>
-<table>
+<h2 id="Virtual-Machines-On-Prem-vs-On-Azure"><a href="#Virtual-Machines-On-Prem-vs-On-Azure" class="headerlink" title="Virtual Machines On-Prem vs On-Azure"></a>Virtual Machines On-Prem vs On-Azure</h2><table>
 <thead>
 <tr>
 <th>특징</th>
@@ -72,35 +71,26 @@
 </tr>
 </tbody>
 </table>
-<h2>Azure VM 에 적합한 용도</h2>
-<ul>
+<h2 id="Azure-VM-에-적합한-용도"><a href="#Azure-VM-에-적합한-용도" class="headerlink" title="Azure VM 에 적합한 용도"></a>Azure VM 에 적합한 용도</h2><ul>
 <li>Highly available service</li>
 <li>Unpredictable growth or short-term increased</li>
 <li>Spiking workloads</li>
 <li>Steady workloads</li>
 <li>Periodic workloads</li>
 </ul>
-<h2>Azure VM 에 적합하지 않은 용도</h2>
-<ul>
+<h2 id="Azure-VM-에-적합하지-않은-용도"><a href="#Azure-VM-에-적합하지-않은-용도" class="headerlink" title="Azure VM 에 적합하지 않은 용도"></a>Azure VM 에 적합하지 않은 용도</h2><ul>
 <li>Low volume or limited growth</li>
-<li>Regulated environment – hybrid might be suitable</li>
+<li>Regulated environment &ndash; hybrid might be suitable</li>
 </ul>
-<h2>Azure VM 이 지원하지 않는 기능들</h2>
-<ul>
-<li>
-<p>Multipath I/O</p>
+<h2 id="Azure-VM-이-지원하지-않는-기능들"><a href="#Azure-VM-이-지원하지-않는-기능들" class="headerlink" title="Azure VM 이 지원하지 않는 기능들"></a>Azure VM 이 지원하지 않는 기능들</h2><ul>
+<li>Multipath I/O</li>
+<li><p>Network Load Balancing</p>
 </li>
-<li>
-<p>Network Load Balancing</p>
+<li><p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
 </li>
-<li>
-<p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
+<li><p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
 </li>
-<li>
-<p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
-</li>
-<li>
-<p>지원하는 Windows Server Role:</p>
+<li><p>지원하는 Windows Server Role:</p>
 <ul>
 <li>Application Server Role</li>
 <li>Web Server Role</li>
@@ -109,8 +99,7 @@
 </ul>
 </li>
 </ul>
-<h2>Azure VM 사이즈</h2>
-<table>
+<h2 id="Azure-VM-사이즈"><a href="#Azure-VM-사이즈" class="headerlink" title="Azure VM 사이즈"></a>Azure VM 사이즈</h2><table>
 <thead>
 <tr>
 <th>Level</th>
@@ -147,8 +136,7 @@
 <li><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables" target="_blank" rel="external">https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables</a> 꼭 읽어볼 것</li>
 <li>ACU (Azure Compute Unit) 는 A1 사이즈를 100으로 놓고 다른 사이즈의 SKU를 비교함.</li>
 </ul>
-<h2>Azure Cost Estimator Tool</h2>
-<ul>
+<h2 id="Azure-Cost-Estimator-Tool"><a href="#Azure-Cost-Estimator-Tool" class="headerlink" title="Azure Cost Estimator Tool"></a>Azure Cost Estimator Tool</h2><ul>
 <li>기존 하드웨어와 장비를 15분 정도 스캔</li>
 <li>가장 잘 맞는 VM 사이즈 추천</li>
 <li>각 인스턴스당 30일 기준 비용 산정</li>
