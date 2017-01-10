@@ -1,0 +1,36 @@
+# basic
+title: Azure Cert Preppies
+subtitle: Azure 자격증 준비하기
+favicon: favicon.ico
+
+# avatar: images/avatar.png
+# banner_small: images/banner-small.png
+# banner_large: images/banner-large.png
+avatar: avatar.png
+banner_small: banner.png
+banner_large: banner.png
+
+# disqus
+disqus_shortname: 
+
+# social
+social:
+  github: 
+  twitter: WEIRDxMEETUP
+  weibo: 
+
+# nav #
+nav:
+  home: .
+  archive: archives
+  # about: about
+  rss: atom.xml
+
+# heox-renderre-sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+
+google_anlytics: # Put tracking ID here
