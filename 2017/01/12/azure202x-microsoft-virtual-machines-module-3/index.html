@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AZURE202x Microsoft Azure Virtual Machines - Module 3 | Azure Cert Preppies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/azure-cert-prep/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/azure-cert-prep/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/azure-cert-prep/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/azure-cert-prep/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/azure-cert-prep/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/azure-cert-prep/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/azure-cert-prep/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/azure-cert-prep/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/azure-cert-prep/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/azure-cert-prep/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/azure-cert-prep/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/azure-cert-prep/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/azure-cert-prep/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/azure-cert-prep/favicon-16x16.png">
+<link rel="manifest" href="/azure-cert-prep/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/azure-cert-prep/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">  <link rel="stylesheet" href="/azure-cert-prep/css/app.css">
+  
+    <script>
+    	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    	ga('create', 'UA-749520-7', 'auto');
+    	ga('send', 'pageview');
+    
+    </script>
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/azure-cert-prep/.">home</a>
+    
+  
+    
+      <a href="/azure-cert-prep/archives">archive</a>
+    
+  
+    
+      <a href="/azure-cert-prep/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/azure-cert-prep/2017/01/12/azure202x-microsoft-virtual-machines-module-3/">AZURE202x Microsoft Azure Virtual Machines - Module 3</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">January 12 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <blockquote>
+<p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 3 부분에 대한 정리입니다.</p>
+</blockquote>
+<h2 id="Public-IP-Address"><a href="#Public-IP-Address" class="headerlink" title="Public IP Address"></a>Public IP Address</h2><ul>
+<li>For public-facing services</li>
+<li>VMs, Internet facing load balancers, VPN gateways and application gateways</li>
+<li>Can configure on the public IP resource</li>
+<li>dynamic address<ul>
+<li>IP is not allocated on its creation, but assigned on starting and released on stopping</li>
+</ul>
+</li>
+<li>static address<ul>
+<li>IP is assigned on its creation, and released on deletion or on changing to <strong>dynamic</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Private-IP-Address"><a href="#Private-IP-Address" class="headerlink" title="Private IP Address"></a>Private IP Address</h2><ul>
+<li>Within Azure VNet</li>
+<li>To extend on-prem with VPN Gateway or ExpressRoute</li>
+<li>VMs, internal load balancers and application gateways</li>
+<li>Can configure on the network interface resource</li>
+<li>We can’t choose a specific IP address</li>
+<li>dynamic address<ul>
+<li>default method assigned by resource’s subnet via DHCP. Changes when start/stop the resource.</li>
+</ul>
+</li>
+<li>static address<ul>
+<li>can set static with a valid IP within the resource’s subnet.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Availability-Set"><a href="#Availability-Set" class="headerlink" title="Availability Set"></a>Availability Set</h2><ul>
+<li>Logical grouping of 2+ VMs to prepare planned/unplanned failures</li>
+<li>Availability Set Principles<ul>
+<li>Multiple VMs in one Availability Set for redundancy</li>
+<li>Each application tier into separate Avaliability Sets</li>
+<li>Load Balancer with Availability Sets combination</li>
+</ul>
+</li>
+<li>Each VM in one Availability Set is placed in one update domain and two fault domains</li>
+</ul>
+<h2 id="Update-Domains"><a href="#Update-Domains" class="headerlink" title="Update Domains"></a>Update Domains</h2><ul>
+<li>To perform incremental or rolling updates during the deployment</li>
+<li>Set of VMs with physical hardware that can be updated/rebooted at the same time</li>
+<li>Only one update domain is rebooted at a time.</li>
+<li>5 UD by default, but up to 20 UDs</li>
+</ul>
+<h2 id="Fault-Domains"><a href="#Fault-Domains" class="headerlink" title="Fault Domains"></a>Fault Domains</h2><ul>
+<li>To share a common set of hardware, switches for single point of failures</li>
+<li>VMs in AS are placed in at least two FDs to avoid affects from hardware failures, network outages, power interruptions or software updates</li>
+</ul>
+<h2 id="Scale-Set"><a href="#Scale-Set" class="headerlink" title="Scale Set"></a>Scale Set</h2><ul>
+<li>Azure Compute resource to deploy/manage a set of <strong>identical</strong> VMs</li>
+<li>Support true auto-scale without provisioning to build large-scale targeting big compute, big data, centralised workloads</li>
+<li>Often integrated with Azure Insight to measure scale up/down, Load Balancer, and NAT rules to spread workload over the available VMs</li>
+<li>Guidelines<ul>
+<li>Automatically created with load balancer NAT rules to enable SSH or RDP</li>
+<li>Scale Set varies between 0 and 100 VMs and easily change the number of VMs</li>
+<li>Set Max/Min number of VMs and define triggers based on resource consumption</li>
+<li>On scaling out, VMs are balanced across update/fault domains for maximum availability</li>
+<li>On scaling in, VMs are removed with maximum availability</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/azure-cert-prep/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> Azure Cert Preppies </p>
+      <p class="subtitle"> Azure 자격증 준비하기 </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="WEIRDxMEETUP"
+  href="https://twitter.com/intent/tweet?text=ockquote>
+<p><a href"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>
