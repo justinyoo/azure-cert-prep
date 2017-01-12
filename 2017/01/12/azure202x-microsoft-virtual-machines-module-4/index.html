@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AZURE202x Microsoft Azure Virtual Machines - Module 4 | Azure Cert Preppies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/azure-cert-prep/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/azure-cert-prep/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/azure-cert-prep/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/azure-cert-prep/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/azure-cert-prep/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/azure-cert-prep/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/azure-cert-prep/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/azure-cert-prep/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/azure-cert-prep/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/azure-cert-prep/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/azure-cert-prep/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/azure-cert-prep/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/azure-cert-prep/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/azure-cert-prep/favicon-16x16.png">
+<link rel="manifest" href="/azure-cert-prep/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/azure-cert-prep/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">  <link rel="stylesheet" href="/azure-cert-prep/css/app.css">
+  
+    <script>
+    	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    	ga('create', 'UA-749520-7', 'auto');
+    	ga('send', 'pageview');
+    
+    </script>
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/azure-cert-prep/.">home</a>
+    
+  
+    
+      <a href="/azure-cert-prep/archives">archive</a>
+    
+  
+    
+      <a href="/azure-cert-prep/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/azure-cert-prep/2017/01/12/azure202x-microsoft-virtual-machines-module-4/">AZURE202x Microsoft Azure Virtual Machines - Module 4</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">January 12 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <blockquote>
+<p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 4 부분에 대한 정리입니다.</p>
+</blockquote>
+<h2 id="VM-Disk-Types"><a href="#VM-Disk-Types" class="headerlink" title="VM Disk Types"></a>VM Disk Types</h2><ul>
+<li>All VMs have at least 2 disks - OS disk and temp disk. They can have 1+ data disk</li>
+<li>Disk are stored as .vhd and up to 1023GB</li>
+<li>OS disk: SATA drive and labelled as C by default</li>
+<li>Temp disk: labelled as D by default and for storing <code>pagefile.sys</code></li>
+<li>Data disk: SCSI drive and labelled with my choice, stored in BLOB storage</li>
+<li>Depending on VM size, temp disk size and number of data disk are determined</li>
+</ul>
+<h2 id="VM-Disks-Management"><a href="#VM-Disks-Management" class="headerlink" title="VM Disks Management"></a>VM Disks Management</h2><ul>
+<li>Attach, remove or modify data disk</li>
+<li>Modify settings<ul>
+<li>caching behaviour</li>
+<li>size</li>
+</ul>
+</li>
+<li>Storage spaces in VMs<ul>
+<li>Increase I/O throughput</li>
+<li>Volume larger than 1TB</li>
+</ul>
+</li>
+<li>Through portal</li>
+<li>Through PowerShell &ndash; <code>Add-AzureDataDisk</code> (ASM), <code>Add-AzureVMDataDisk</code> (ARM)</li>
+<li>Good to know<ul>
+<li>VM size determines number of data disks to Attach</li>
+<li>Premium storage needs DS/FS/GS series VM</li>
+<li>New/empty disk is created when attaching</li>
+<li>When attaching, <code>name</code>, <code>type</code>, <code>size</code>, <code>location</code> and <code>caching</code> needs to be provided</li>
+<li>Stored as .vhd files in blob storage</li>
+<li>.vhd disk should already exist when attaching the existing disk</li>
+</ul>
+</li>
+</ul>
+<h2 id="Disk-Import-amp-Export"><a href="#Disk-Import-amp-Export" class="headerlink" title="Disk Import &amp; Export"></a>Disk Import &amp; Export</h2><ul>
+<li>Useful to move large amount of data from on-prem hard disk to Azure blob storage (or vice-versa)</li>
+<li>Scenario:<ul>
+<li>Large amount of data migration to cloud</li>
+<li>Content distribution</li>
+<li>Backup</li>
+<li>Data recovery</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/azure-cert-prep/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> Azure Cert Preppies </p>
+      <p class="subtitle"> Azure 자격증 준비하기 </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="WEIRDxMEETUP"
+  href="https://twitter.com/intent/tweet?text=ockquote>
+<p><a href"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+</main>
+
+</body>
+</html>

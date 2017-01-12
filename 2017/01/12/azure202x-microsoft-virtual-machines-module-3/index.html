@@ -67,45 +67,37 @@
     <blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 3 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2>Public IP Address</h2>
-<ul>
+<h2 id="Public-IP-Address"><a href="#Public-IP-Address" class="headerlink" title="Public IP Address"></a>Public IP Address</h2><ul>
 <li>For public-facing services</li>
 <li>VMs, Internet facing load balancers, VPN gateways and application gateways</li>
 <li>Can configure on the public IP resource</li>
-<li>dynamic address
-<ul>
+<li>dynamic address<ul>
 <li>IP is not allocated on its creation, but assigned on starting and released on stopping</li>
 </ul>
 </li>
-<li>static address
-<ul>
+<li>static address<ul>
 <li>IP is assigned on its creation, and released on deletion or on changing to <strong>dynamic</strong></li>
 </ul>
 </li>
 </ul>
-<h2>Private IP Address</h2>
-<ul>
+<h2 id="Private-IP-Address"><a href="#Private-IP-Address" class="headerlink" title="Private IP Address"></a>Private IP Address</h2><ul>
 <li>Within Azure VNet</li>
 <li>To extend on-prem with VPN Gateway or ExpressRoute</li>
 <li>VMs, internal load balancers and application gateways</li>
 <li>Can configure on the network interface resource</li>
-<li>We can't choose a specific IP address</li>
-<li>dynamic address
-<ul>
-<li>default method assigned by resource's subnet via DHCP. Changes when start/stop the resource.</li>
+<li>We can’t choose a specific IP address</li>
+<li>dynamic address<ul>
+<li>default method assigned by resource’s subnet via DHCP. Changes when start/stop the resource.</li>
 </ul>
 </li>
-<li>static address
-<ul>
-<li>can set static with a valid IP within the resource's subnet.</li>
+<li>static address<ul>
+<li>can set static with a valid IP within the resource’s subnet.</li>
 </ul>
 </li>
 </ul>
-<h2>Availability Set</h2>
-<ul>
+<h2 id="Availability-Set"><a href="#Availability-Set" class="headerlink" title="Availability Set"></a>Availability Set</h2><ul>
 <li>Logical grouping of 2+ VMs to prepare planned/unplanned failures</li>
-<li>Availability Set Principles
-<ul>
+<li>Availability Set Principles<ul>
 <li>Multiple VMs in one Availability Set for redundancy</li>
 <li>Each application tier into separate Avaliability Sets</li>
 <li>Load Balancer with Availability Sets combination</li>
@@ -113,25 +105,21 @@
 </li>
 <li>Each VM in one Availability Set is placed in one update domain and two fault domains</li>
 </ul>
-<h2>Update Domains</h2>
-<ul>
+<h2 id="Update-Domains"><a href="#Update-Domains" class="headerlink" title="Update Domains"></a>Update Domains</h2><ul>
 <li>To perform incremental or rolling updates during the deployment</li>
 <li>Set of VMs with physical hardware that can be updated/rebooted at the same time</li>
 <li>Only one update domain is rebooted at a time.</li>
 <li>5 UD by default, but up to 20 UDs</li>
 </ul>
-<h2>Fault Domains</h2>
-<ul>
+<h2 id="Fault-Domains"><a href="#Fault-Domains" class="headerlink" title="Fault Domains"></a>Fault Domains</h2><ul>
 <li>To share a common set of hardware, switches for single point of failures</li>
 <li>VMs in AS are placed in at least two FDs to avoid affects from hardware failures, network outages, power interruptions or software updates</li>
 </ul>
-<h2>Scale Set</h2>
-<ul>
+<h2 id="Scale-Set"><a href="#Scale-Set" class="headerlink" title="Scale Set"></a>Scale Set</h2><ul>
 <li>Azure Compute resource to deploy/manage a set of <strong>identical</strong> VMs</li>
 <li>Support true auto-scale without provisioning to build large-scale targeting big compute, big data, centralised workloads</li>
 <li>Often integrated with Azure Insight to measure scale up/down, Load Balancer, and NAT rules to spread workload over the available VMs</li>
-<li>Guidelines
-<ul>
+<li>Guidelines<ul>
 <li>Automatically created with load balancer NAT rules to enable SSH or RDP</li>
 <li>Scale Set varies between 0 and 100 VMs and easily change the number of VMs</li>
 <li>Set Max/Min number of VMs and define triggers based on resource consumption</li>
