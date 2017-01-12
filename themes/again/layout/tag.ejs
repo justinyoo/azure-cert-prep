@@ -1,0 +1,7 @@
+<main class="archive">
+  <% page.posts.each(function(post){ %>
+    <%- partial('./_partial/archive', {pagination: config.tag, index: true}) %>
+  <% }) %>
+
+  <%- partial('./_widget/paginator') %>
+</main>

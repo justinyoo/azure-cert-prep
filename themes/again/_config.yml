@@ -15,15 +15,14 @@ disqus_shortname:
 
 # social
 social:
-  github: https://github.com/justinyoo/azure-cert-prep
-  twitter: https://twitter.com/WEIRDxMEETUP
+  github: justinyoo/azure-cert-prep
+  twitter: WEIRDxMEETUP
   weibo: 
 
 # nav #
 nav:
   home: .
   archive: archives
-  # about: about
   rss: atom.xml
 
 # heox-renderre-sass
@@ -33,4 +32,4 @@ node_sass:
   sourceComments: false
 
 
-google_anlytics: # Put tracking ID here
+google_analytics: UA-749520-7 # Put tracking ID here
