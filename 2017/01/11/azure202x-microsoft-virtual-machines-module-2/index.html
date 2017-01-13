@@ -94,10 +94,8 @@
 <h3 id="Comparison-between-Methods"><a href="#Comparison-between-Methods" class="headerlink" title="Comparison between Methods"></a>Comparison between Methods</h3><ul>
 <li>Both support Windows and Linux VMs</li>
 <li>Both create VMs from image</li>
-<li><p>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</p>
-</li>
-<li><p>Advanced mode only:</p>
-<ul>
+<li>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</li>
+<li>Only advanced mode:<ul>
 <li>Creates VM from OS disk</li>
 <li>Specifies AD domain join info</li>
 <li>Creates new or attaches existing disks</li>
@@ -114,14 +112,16 @@
 <li>All ARM PS commands has <code>VM</code> on their names</li>
 </ul>
 <h2 id="Creating-Azure-VM-via-ARM-Templates"><a href="#Creating-Azure-VM-via-ARM-Templates" class="headerlink" title="Creating Azure VM via ARM Templates"></a>Creating Azure VM via ARM Templates</h2><ul>
+<li>Steps:<ul>
 <li>Create template file</li>
 <li>Create parameters file</li>
 <li>Create resource group</li>
-<li><p>Deploy template</p>
+<li>Deploy template</li>
+</ul>
 </li>
-<li><p>ARM template file size is allowed up to 1MB</p>
-</li>
+<li>ARM template file size is allowed up to 1MB</li>
 <li>ARM parameters file size is allowed up to 64KB</li>
+<li>Required elements: <code>$schema</code>, <code>resources</code>, <code>contentVersion</code></li>
 </ul>
 <h2 id="Creating-Azure-VM-from-Custom-Images"><a href="#Creating-Azure-VM-from-Custom-Images" class="headerlink" title="Creating Azure VM from Custom Images"></a>Creating Azure VM from Custom Images</h2><ul>
 <li>Prepare VM: <code>sysprep</code></li>

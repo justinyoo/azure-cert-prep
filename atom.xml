@@ -5,7 +5,7 @@
   <link href="/azure-cert-prep/atom.xml" rel="self"/>
   
   <link href="https://justinyoo.github.io/azure-cert-prep/"/>
-  <updated>2017-01-12T04:39:35.267Z</updated>
+  <updated>2017-01-13T02:04:34.403Z</updated>
   <id>https://justinyoo.github.io/azure-cert-prep/</id>
   
   <author>
@@ -14,6 +14,112 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AZURE202x Microsoft Azure Virtual Machines - Module 5</title>
+    <link href="https://justinyoo.github.io/azure-cert-prep/2017/01/13/azure202x-microsoft-virtual-machines-module-5/"/>
+    <id>https://justinyoo.github.io/azure-cert-prep/2017/01/13/azure202x-microsoft-virtual-machines-module-5/</id>
+    <published>2017-01-12T15:25:50.000Z</published>
+    <updated>2017-01-13T02:04:34.403Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 5 부분에 대한 정리입니다.</p>
+</blockquote>
+<h2 id="Managing-VMs"><a href="#Managing-VMs" class="headerlink" title="Managing VMs"></a>Managing VMs</h2><ul>
+<li>VM Agent Extensions:<ul>
+<li>To extend VM functionality and management operations</li>
+<li>Can install multiple extensions on a VM</li>
+<li>Desired State Configuraiton, Chef, Puppet</li>
+<li>VM Agent<ul>
+<li>Secure and lightweight process</li>
+<li>To bootstrap (install/configure/removes) additional extensions</li>
+<li>Offered by MS and partners</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>VM Access Agent Extension:<ul>
+<li>Create, update, reset user information in Windows VM</li>
+</ul>
+</li>
+<li>Azure Cross-Platform CLI<ul>
+<li>Primarily used for Linux VMs</li>
+<li>Can be used for Windows VMs</li>
+</ul>
+</li>
+<li>RDP<ul>
+<li>For Windows VMs</li>
+</ul>
+</li>
+<li>SSH<ul>
+<li>Form Linux VMs</li>
+<li>PuTTY for Windows, OpenSSH for Linux</li>
+<li>SSH endpoint is always created, regardless to use or not</li>
+</ul>
+</li>
+</ul>
+<h2 id="Configuration-Management-Tools"><a href="#Configuration-Management-Tools" class="headerlink" title="Configuration Management Tools"></a>Configuration Management Tools</h2><ul>
+<li>Desired State Configuration (DSC)<ul>
+<li>Supports both Windows (WMF) and Linux (OMI)</li>
+<li>Supports ARM templates, PS and XPLAT-CLI</li>
+<li>Consistently deploy, reliably monitor, and automatically update the desired state of all resources</li>
+</ul>
+</li>
+<li>Chef<ul>
+<li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
+<li>Promotes infrastructure as code</li>
+<li>Provides declarative management solution</li>
+<li>Enables policy-based management</li>
+</ul>
+</li>
+<li>Puppet<ul>
+<li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
+<li>Supports easy-to-understand declarative language</li>
+<li>Enforces desired state on systems</li>
+<li>Puppet Forge supports ready-to-use modules</li>
+</ul>
+</li>
+<li>XPLAT-CLI<ul>
+<li>Can be installed through npm, package installer or Docker host</li>
+<li>azure <code>topic</code> <code>verb</code> <code>options</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="VM-Monitoring"><a href="#VM-Monitoring" class="headerlink" title="VM Monitoring"></a>VM Monitoring</h2><ul>
+<li>Agent VM extension</li>
+<li>Boot diagnostics</li>
+<li>Admin can monitor diagnostic logging for:<ul>
+<li>Basic metrics, network &amp; web metrics, and .NET metrics</li>
+<li>Windows event system logs, security logs, application logs</li>
+<li>Diagnostic infrastructure logs</li>
+</ul>
+</li>
+<li>Alerts:<ul>
+<li>Combination of metric, condition, threshold and period</li>
+<li>Email notification and Webhook support</li>
+<li>Email is sent when rule becomes active and when the alert condition is resolved</li>
+</ul>
+</li>
+<li>All data is<ul>
+<li>Displayed in Portal</li>
+<li>Configurable</li>
+<li>Stored in Azure Storage (tables and blobs)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://openedx.microsoft.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://openedx.microsoft.com&lt;/a&gt; 에서 제공하는 무료 강좌인 &lt;a h
+    
+    </summary>
+    
+    
+      <category term="azure202x" scheme="https://justinyoo.github.io/azure-cert-prep/tags/azure202x/"/>
+    
+  </entry>
   
   <entry>
     <title>AZURE202x Microsoft Azure Virtual Machines - Module 4</title>
@@ -171,7 +277,7 @@
     <link href="https://justinyoo.github.io/azure-cert-prep/2017/01/11/azure202x-microsoft-virtual-machines-module-2/"/>
     <id>https://justinyoo.github.io/azure-cert-prep/2017/01/11/azure202x-microsoft-virtual-machines-module-2/</id>
     <published>2017-01-10T14:00:00.000Z</published>
-    <updated>2017-01-12T00:05:18.000Z</updated>
+    <updated>2017-01-13T01:59:02.751Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 2 부분에 대한 정리입니다.</p>
@@ -203,10 +309,8 @@
 <h3 id="Comparison-between-Methods"><a href="#Comparison-between-Methods" class="headerlink" title="Comparison between Methods"></a>Comparison between Methods</h3><ul>
 <li>Both support Windows and Linux VMs</li>
 <li>Both create VMs from image</li>
-<li><p>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</p>
-</li>
-<li><p>Advanced mode only:</p>
-<ul>
+<li>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</li>
+<li>Only advanced mode:<ul>
 <li>Creates VM from OS disk</li>
 <li>Specifies AD domain join info</li>
 <li>Creates new or attaches existing disks</li>
@@ -223,14 +327,16 @@
 <li>All ARM PS commands has <code>VM</code> on their names</li>
 </ul>
 <h2 id="Creating-Azure-VM-via-ARM-Templates"><a href="#Creating-Azure-VM-via-ARM-Templates" class="headerlink" title="Creating Azure VM via ARM Templates"></a>Creating Azure VM via ARM Templates</h2><ul>
+<li>Steps:<ul>
 <li>Create template file</li>
 <li>Create parameters file</li>
 <li>Create resource group</li>
-<li><p>Deploy template</p>
+<li>Deploy template</li>
+</ul>
 </li>
-<li><p>ARM template file size is allowed up to 1MB</p>
-</li>
+<li>ARM template file size is allowed up to 1MB</li>
 <li>ARM parameters file size is allowed up to 64KB</li>
+<li>Required elements: <code>$schema</code>, <code>resources</code>, <code>contentVersion</code></li>
 </ul>
 <h2 id="Creating-Azure-VM-from-Custom-Images"><a href="#Creating-Azure-VM-from-Custom-Images" class="headerlink" title="Creating Azure VM from Custom Images"></a>Creating Azure VM from Custom Images</h2><ul>
 <li>Prepare VM: <code>sysprep</code></li>
