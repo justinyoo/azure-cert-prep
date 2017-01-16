@@ -5,7 +5,7 @@
   <link href="/azure-cert-prep/atom.xml" rel="self"/>
   
   <link href="https://justinyoo.github.io/azure-cert-prep/"/>
-  <updated>2017-01-13T02:04:34.403Z</updated>
+  <updated>2017-01-16T11:46:28.674Z</updated>
   <id>https://justinyoo.github.io/azure-cert-prep/</id>
   
   <author>
@@ -14,6 +14,134 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MS 자격증 70-532 시험준비</title>
+    <link href="https://justinyoo.github.io/azure-cert-prep/2017/01/16/ms-exam-70-532-preparation/"/>
+    <id>https://justinyoo.github.io/azure-cert-prep/2017/01/16/ms-exam-70-532-preparation/</id>
+    <published>2017-01-16T12:57:53.000Z</published>
+    <updated>2017-01-16T11:46:28.674Z</updated>
+    
+    <content type="html"><![CDATA[<p>마이크로소프트에서 제공하는 자격증들 중 애저 관련 <a href="https://www.microsoft.com/en-us/learning/mcsa-cloud-platform-certification.aspx" target="_blank" rel="external">MCSA (Microsofft Certified Solutions Associate): Cloud Platform</a> 취득을 위해서는 총 다섯 과목 중 세 과목의 시험에서 합격하면 된다. 그 다섯 과목 중에 <a href="https://www.microsoft.com/en-us/learning/exam-70-532.aspx" target="_blank" rel="external">70-532</a>, <a href="https://www.microsoft.com/en-us/learning/exam-70-533.aspx" target="_blank" rel="external">70-533</a>, <a href="https://www.microsoft.com/en-us/learning/exam-70-534.aspx" target="_blank" rel="external">70-534</a> 이 세 과목을 합격하면 MCSA와 동시에 <a href="https://www.microsoft.com/en-us/learning/mcse-cloud-platform-infrastructure.aspx" target="_blank" rel="external">MCSE (Microsoft Certified Solutions Expert): Cloud Platform and Infrastructure</a> 자격증 역시 취득할 수 있어서 보통 이 테크트리를 많이 타는 편이다.</p>
+<p>이 포스트에서는 이 세 과목 중 <code>70-532: Developing Microsoft Azure Solutions</code> 과목과 관련해서 자격증 취득을 위해 공부해야 하는 내용들에 대해 정리해 보고자 한다.</p>
+<h2>출제 범위</h2>
+<p>출제 범위는 아래와 같다</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>주제</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>애저 리소스 매니저를 이용한 VM 생성 및 관리</td>
+<td>30‒35%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>스토리지 및 데이터 관련 설계 및 개발 전략</td>
+<td>25‒30%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>인증, 애플리케이션, 네트워크 서비스 관리</td>
+<td>15‒20%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>애저 PaaS 자원을 활용한 웹 및 모바일 서비스 설계 및 개발</td>
+<td>25–30%</td>
+</tr>
+</tbody>
+</table>
+<h2>1. 애저 리소스 매니저를 이용한 VM 생성 및 관리</h2>
+<p>이 주제에서는 아래와 같은 내용을 준비하면 좋다. 그리고 이와 관련한 온라인 무료 과정으로는 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a>을 수강하면 좋다.</p>
+<ul>
+<li>애저 리소스 매니저 상에서 VM에 워크로드 설치
+<ul>
+<li>설치할 수 있는 워크로드와 그렇지 않은 것 구분하기</li>
+<li>워크로드 실행하기 (리눅스 포함)</li>
+<li>VM 생성하기 (리눅스 포함)</li>
+</ul>
+</li>
+<li>설정 관리 (Configuration Management) 수행
+<ul>
+<li>파워셸 DSC와 VM 에이전트를 이용해서 설정 관리 자동화하기</li>
+<li>Chef 나 Puppet 같은 설정 관리 도구를 이용해서 VM 설정하기</li>
+<li>리모트 디버깅 활성화하기</li>
+</ul>
+</li>
+<li>애저 리소스 매니저 VM에 대한 네트워킹 설정
+<ul>
+<li>정적 IP주소, 네트워크 보안 그룹 (NSG), DNS, 사용자 정의 라우트 (UDRs), HTTP, TCP에 해당하는 내부/외부 로드 발란싱, 퍼블릭 IP, 방화벽 규칙, Direct server return</li>
+<li>애플리케이션 게이트웨이 설계및 개발</li>
+</ul>
+</li>
+<li>애저 리소스 매니저 VM에 대한 스케일링
+<ul>
+<li>VM 사이즈 스케일 업/다운, VM 스케일셋 (VMSS) 설치, ARM VMSS 오토 스케일링 설정</li>
+</ul>
+</li>
+<li>애저 리소스 매니저 VM을 위한 스토리지 설계 및 개발
+<ul>
+<li>디스크 캐싱 설정</li>
+<li>스토리지 용량 계획</li>
+<li>애저 파일 서비스를 이용한 공유 스토리지 설정</li>
+<li>지오 리플리케이션 설정</li>
+<li>스탠다드/프리미엄 스토리지를 이용한 VM 설치</li>
+</ul>
+</li>
+<li>애저 리소스 매니저 VM에 대한 모니터링
+<ul>
+<li>모니터링 설정, 알람 설정, 진단 설정, 모니터링 스토리지 지역 설정</li>
+</ul>
+</li>
+<li>애저 리소스 매니저 가용성 관리
+<ul>
+<li>가용성 셋 안에 리던던시를 위한 여러개의 VM을 설정하는 방법</li>
+<li>각각의 애플리케이션 티어를 여러개의 가용성 셋에 설정하는 방법</li>
+<li>로드밸런서와 가용성 셋을 조합하는 방법</li>
+</ul>
+</li>
+</ul>
+<p>위에 언급한 과목에 대한 정리는 아래 포스트를 참조하기 바란다.</p>
+<ul>
+<li>Microsoft Azure Virtual Machines
+<ul>
+<li><a href="https://justinyoo.github.io/azure-cert-prep/2017/01/10/azure202x-microsoft-virtual-machines-module-1/">Module 1</a></li>
+<li><a href="https://justinyoo.github.io/azure-cert-prep/2017/01/11/azure202x-microsoft-virtual-machines-module-2/">Module 2</a></li>
+<li><a href="https://justinyoo.github.io/azure-cert-prep/2017/01/12/azure202x-microsoft-virtual-machines-module-3/">Module 3</a></li>
+<li><a href="https://justinyoo.github.io/azure-cert-prep/2017/01/12/azure202x-microsoft-virtual-machines-module-4/">Module 4</a></li>
+<li><a href="https://justinyoo.github.io/azure-cert-prep/2017/01/13/azure202x-microsoft-virtual-machines-module-5/">Module 5</a></li>
+</ul>
+</li>
+</ul>
+<h2>2. 스토리지 및 데이터 관련 설계 및 개발 전략</h2>
+<p>TBD</p>
+<h2>3. 인증, 애플리케이션, 네트워크 서비스 관리</h2>
+<p>TBD</p>
+<h2>4. 애저 PaaS 자원을 활용한 웹 및 모바일 서비스 설계 및 개발</h2>
+<p>TBD</p>
+<p>이상으로 70-532 과목을 위해 준비해야 하는 내용에 대해 알아 보았다. 현재까지 공부한 내용이 많지 않아 나머지 주제에 대해서는 알 수가 없다. 계속 공부하는대로 업데이트 하도록 하겠다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;마이크로소프트에서 제공하는 자격증들 중 애저 관련 &lt;a href=&quot;https://www.microsoft.com/en-us/learning/mcsa-cloud-platform-certification.aspx&quot; target=&quot;_blank&quot; rel
+    
+    </summary>
+    
+    
+      <category term="cert" scheme="https://justinyoo.github.io/azure-cert-prep/tags/cert/"/>
+    
+      <category term="preparations" scheme="https://justinyoo.github.io/azure-cert-prep/tags/preparations/"/>
+    
+      <category term="70-532" scheme="https://justinyoo.github.io/azure-cert-prep/tags/70-532/"/>
+    
+  </entry>
   
   <entry>
     <title>AZURE202x Microsoft Azure Virtual Machines - Module 5</title>
@@ -25,12 +153,15 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 5 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="Managing-VMs"><a href="#Managing-VMs" class="headerlink" title="Managing VMs"></a>Managing VMs</h2><ul>
-<li>VM Agent Extensions:<ul>
+<h2>Managing VMs</h2>
+<ul>
+<li>VM Agent Extensions:
+<ul>
 <li>To extend VM functionality and management operations</li>
 <li>Can install multiple extensions on a VM</li>
 <li>Desired State Configuraiton, Chef, Puppet</li>
-<li>VM Agent<ul>
+<li>VM Agent
+<ul>
 <li>Secure and lightweight process</li>
 <li>To bootstrap (install/configure/removes) additional extensions</li>
 <li>Offered by MS and partners</li>
@@ -38,69 +169,82 @@
 </li>
 </ul>
 </li>
-<li>VM Access Agent Extension:<ul>
+<li>VM Access Agent Extension:
+<ul>
 <li>Create, update, reset user information in Windows VM</li>
 </ul>
 </li>
-<li>Azure Cross-Platform CLI<ul>
+<li>Azure Cross-Platform CLI
+<ul>
 <li>Primarily used for Linux VMs</li>
 <li>Can be used for Windows VMs</li>
 </ul>
 </li>
-<li>RDP<ul>
+<li>RDP
+<ul>
 <li>For Windows VMs</li>
 </ul>
 </li>
-<li>SSH<ul>
+<li>SSH
+<ul>
 <li>Form Linux VMs</li>
 <li>PuTTY for Windows, OpenSSH for Linux</li>
 <li>SSH endpoint is always created, regardless to use or not</li>
 </ul>
 </li>
 </ul>
-<h2 id="Configuration-Management-Tools"><a href="#Configuration-Management-Tools" class="headerlink" title="Configuration Management Tools"></a>Configuration Management Tools</h2><ul>
-<li>Desired State Configuration (DSC)<ul>
+<h2>Configuration Management Tools</h2>
+<ul>
+<li>Desired State Configuration (DSC)
+<ul>
 <li>Supports both Windows (WMF) and Linux (OMI)</li>
 <li>Supports ARM templates, PS and XPLAT-CLI</li>
 <li>Consistently deploy, reliably monitor, and automatically update the desired state of all resources</li>
 </ul>
 </li>
-<li>Chef<ul>
+<li>Chef
+<ul>
 <li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
 <li>Promotes infrastructure as code</li>
 <li>Provides declarative management solution</li>
 <li>Enables policy-based management</li>
 </ul>
 </li>
-<li>Puppet<ul>
+<li>Puppet
+<ul>
 <li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
 <li>Supports easy-to-understand declarative language</li>
 <li>Enforces desired state on systems</li>
 <li>Puppet Forge supports ready-to-use modules</li>
 </ul>
 </li>
-<li>XPLAT-CLI<ul>
+<li>XPLAT-CLI
+<ul>
 <li>Can be installed through npm, package installer or Docker host</li>
 <li>azure <code>topic</code> <code>verb</code> <code>options</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="VM-Monitoring"><a href="#VM-Monitoring" class="headerlink" title="VM Monitoring"></a>VM Monitoring</h2><ul>
+<h2>VM Monitoring</h2>
+<ul>
 <li>Agent VM extension</li>
 <li>Boot diagnostics</li>
-<li>Admin can monitor diagnostic logging for:<ul>
+<li>Admin can monitor diagnostic logging for:
+<ul>
 <li>Basic metrics, network &amp; web metrics, and .NET metrics</li>
 <li>Windows event system logs, security logs, application logs</li>
 <li>Diagnostic infrastructure logs</li>
 </ul>
 </li>
-<li>Alerts:<ul>
+<li>Alerts:
+<ul>
 <li>Combination of metric, condition, threshold and period</li>
 <li>Email notification and Webhook support</li>
 <li>Email is sent when rule becomes active and when the alert condition is resolved</li>
 </ul>
 </li>
-<li>All data is<ul>
+<li>All data is
+<ul>
 <li>Displayed in Portal</li>
 <li>Configurable</li>
 <li>Stored in Azure Storage (tables and blobs)</li>
@@ -131,7 +275,8 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 4 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="VM-Disk-Types"><a href="#VM-Disk-Types" class="headerlink" title="VM Disk Types"></a>VM Disk Types</h2><ul>
+<h2>VM Disk Types</h2>
+<ul>
 <li>All VMs have at least 2 disks - OS disk and temp disk. They can have 1+ data disk</li>
 <li>Disk are stored as .vhd and up to 1023GB</li>
 <li>OS disk: SATA drive and labelled as C by default</li>
@@ -139,21 +284,25 @@
 <li>Data disk: SCSI drive and labelled with my choice, stored in BLOB storage</li>
 <li>Depending on VM size, temp disk size and number of data disk are determined</li>
 </ul>
-<h2 id="VM-Disks-Management"><a href="#VM-Disks-Management" class="headerlink" title="VM Disks Management"></a>VM Disks Management</h2><ul>
+<h2>VM Disks Management</h2>
+<ul>
 <li>Attach, remove or modify data disk</li>
-<li>Modify settings<ul>
+<li>Modify settings
+<ul>
 <li>caching behaviour</li>
 <li>size</li>
 </ul>
 </li>
-<li>Storage spaces in VMs<ul>
+<li>Storage spaces in VMs
+<ul>
 <li>Increase I/O throughput</li>
 <li>Volume larger than 1TB</li>
 </ul>
 </li>
 <li>Through portal</li>
-<li>Through PowerShell &ndash; <code>Add-AzureDataDisk</code> (ASM), <code>Add-AzureVMDataDisk</code> (ARM)</li>
-<li>Good to know<ul>
+<li>Through PowerShell – <code>Add-AzureDataDisk</code> (ASM), <code>Add-AzureVMDataDisk</code> (ARM)</li>
+<li>Good to know
+<ul>
 <li>VM size determines number of data disks to Attach</li>
 <li>Premium storage needs DS/FS/GS series VM</li>
 <li>New/empty disk is created when attaching</li>
@@ -163,9 +312,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="Disk-Import-amp-Export"><a href="#Disk-Import-amp-Export" class="headerlink" title="Disk Import &amp; Export"></a>Disk Import &amp; Export</h2><ul>
+<h2>Disk Import &amp; Export</h2>
+<ul>
 <li>Useful to move large amount of data from on-prem hard disk to Azure blob storage (or vice-versa)</li>
-<li>Scenario:<ul>
+<li>Scenario:
+<ul>
 <li>Large amount of data migration to cloud</li>
 <li>Content distribution</li>
 <li>Backup</li>
@@ -197,37 +348,45 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 3 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="Public-IP-Address"><a href="#Public-IP-Address" class="headerlink" title="Public IP Address"></a>Public IP Address</h2><ul>
+<h2>Public IP Address</h2>
+<ul>
 <li>For public-facing services</li>
 <li>VMs, Internet facing load balancers, VPN gateways and application gateways</li>
 <li>Can configure on the public IP resource</li>
-<li>dynamic address<ul>
+<li>dynamic address
+<ul>
 <li>IP is not allocated on its creation, but assigned on starting and released on stopping</li>
 </ul>
 </li>
-<li>static address<ul>
+<li>static address
+<ul>
 <li>IP is assigned on its creation, and released on deletion or on changing to <strong>dynamic</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="Private-IP-Address"><a href="#Private-IP-Address" class="headerlink" title="Private IP Address"></a>Private IP Address</h2><ul>
+<h2>Private IP Address</h2>
+<ul>
 <li>Within Azure VNet</li>
 <li>To extend on-prem with VPN Gateway or ExpressRoute</li>
 <li>VMs, internal load balancers and application gateways</li>
 <li>Can configure on the network interface resource</li>
-<li>We can’t choose a specific IP address</li>
-<li>dynamic address<ul>
-<li>default method assigned by resource’s subnet via DHCP. Changes when start/stop the resource.</li>
+<li>We can't choose a specific IP address</li>
+<li>dynamic address
+<ul>
+<li>default method assigned by resource's subnet via DHCP. Changes when start/stop the resource.</li>
 </ul>
 </li>
-<li>static address<ul>
-<li>can set static with a valid IP within the resource’s subnet.</li>
+<li>static address
+<ul>
+<li>can set static with a valid IP within the resource's subnet.</li>
 </ul>
 </li>
 </ul>
-<h2 id="Availability-Set"><a href="#Availability-Set" class="headerlink" title="Availability Set"></a>Availability Set</h2><ul>
+<h2>Availability Set</h2>
+<ul>
 <li>Logical grouping of 2+ VMs to prepare planned/unplanned failures</li>
-<li>Availability Set Principles<ul>
+<li>Availability Set Principles
+<ul>
 <li>Multiple VMs in one Availability Set for redundancy</li>
 <li>Each application tier into separate Avaliability Sets</li>
 <li>Load Balancer with Availability Sets combination</li>
@@ -235,21 +394,25 @@
 </li>
 <li>Each VM in one Availability Set is placed in one update domain and two fault domains</li>
 </ul>
-<h2 id="Update-Domains"><a href="#Update-Domains" class="headerlink" title="Update Domains"></a>Update Domains</h2><ul>
+<h2>Update Domains</h2>
+<ul>
 <li>To perform incremental or rolling updates during the deployment</li>
 <li>Set of VMs with physical hardware that can be updated/rebooted at the same time</li>
 <li>Only one update domain is rebooted at a time.</li>
 <li>5 UD by default, but up to 20 UDs</li>
 </ul>
-<h2 id="Fault-Domains"><a href="#Fault-Domains" class="headerlink" title="Fault Domains"></a>Fault Domains</h2><ul>
+<h2>Fault Domains</h2>
+<ul>
 <li>To share a common set of hardware, switches for single point of failures</li>
 <li>VMs in AS are placed in at least two FDs to avoid affects from hardware failures, network outages, power interruptions or software updates</li>
 </ul>
-<h2 id="Scale-Set"><a href="#Scale-Set" class="headerlink" title="Scale Set"></a>Scale Set</h2><ul>
+<h2>Scale Set</h2>
+<ul>
 <li>Azure Compute resource to deploy/manage a set of <strong>identical</strong> VMs</li>
 <li>Support true auto-scale without provisioning to build large-scale targeting big compute, big data, centralised workloads</li>
 <li>Often integrated with Azure Insight to measure scale up/down, Load Balancer, and NAT rules to spread workload over the available VMs</li>
-<li>Guidelines<ul>
+<li>Guidelines
+<ul>
 <li>Automatically created with load balancer NAT rules to enable SSH or RDP</li>
 <li>Scale Set varies between 0 and 100 VMs and easily change the number of VMs</li>
 <li>Set Max/Min number of VMs and define triggers based on resource consumption</li>
@@ -282,7 +445,8 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 2 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="Azure-VM-생성시-고려-요소"><a href="#Azure-VM-생성시-고려-요소" class="headerlink" title="Azure VM 생성시 고려 요소"></a>Azure VM 생성시 고려 요소</h2><ul>
+<h2>Azure VM 생성시 고려 요소</h2>
+<ul>
 <li>스토리지: 가격, 지역, 설정</li>
 <li>디스크: 사이즈, persistence, 캐싱</li>
 <li>Compute: 용량</li>
@@ -290,27 +454,32 @@
 <li>비용: 스토리지, Compute</li>
 </ul>
 <p>최우선적인 고려사항은 VM과 제반 리소스에 대해 얼마만큼 비용을 지불할 의사가 있는지임.</p>
-<h2 id="Azure-VM-생성-방법"><a href="#Azure-VM-생성-방법" class="headerlink" title="Azure VM 생성 방법"></a>Azure VM 생성 방법</h2><ul>
+<h2>Azure VM 생성 방법</h2>
+<ul>
 <li>포탈 이용하는 방법</li>
 <li>ARM 템플릿 이용하는 방법</li>
 <li>Azure 파워셸 이용하는 방법</li>
 <li>비주얼 스튜디오 이용하는 방법</li>
 </ul>
-<h2 id="Steps-Creating-Azure-VM-via-Portal"><a href="#Steps-Creating-Azure-VM-via-Portal" class="headerlink" title="Steps Creating Azure VM via Portal"></a>Steps Creating Azure VM via Portal</h2><ul>
+<h2>Steps Creating Azure VM via Portal</h2>
+<ul>
 <li>VM 이미지/디스크 선택</li>
 <li>중요 정보 제공 - 호스트, username/password</li>
 <li>옵션 정보 제공 - 도메인 멤버쉽, 가상 네트웍, 스토리지, 클라우드 서비스, 가용성 셋</li>
 <li>VM 프로비저닝</li>
 </ul>
-<h2 id="Creating-Azure-VM-via-PowerShell"><a href="#Creating-Azure-VM-via-PowerShell" class="headerlink" title="Creating Azure VM via PowerShell"></a>Creating Azure VM via PowerShell</h2><ol>
+<h2>Creating Azure VM via PowerShell</h2>
+<ol>
 <li>Quick Mode: <code>New-AzureQuickVM -Windows -ServiceName &quot;[Service Name]&quot; -Name &quot;[VM Name]&quot; -ImageName &quot;[Image]&quot; -Password &quot;[Admin Password]&quot;</code></li>
 <li>Advanced Mode: <code>New-AzureVMConfig | AddAzureProvisioningConfig | Add-AzureDataDisk | AddAzureEndPoint | Add-AzureVM</code></li>
 </ol>
-<h3 id="Comparison-between-Methods"><a href="#Comparison-between-Methods" class="headerlink" title="Comparison between Methods"></a>Comparison between Methods</h3><ul>
+<h3>Comparison between Methods</h3>
+<ul>
 <li>Both support Windows and Linux VMs</li>
 <li>Both create VMs from image</li>
 <li>Both can set Availability Set, Subnet, VNet and Location/Affinity Group</li>
-<li>Only advanced mode:<ul>
+<li>Only advanced mode:
+<ul>
 <li>Creates VM from OS disk</li>
 <li>Specifies AD domain join info</li>
 <li>Creates new or attaches existing disks</li>
@@ -321,13 +490,16 @@
 </ul>
 </li>
 </ul>
-<h3 id="ASM-vs-ARM"><a href="#ASM-vs-ARM" class="headerlink" title="ASM vs ARM"></a>ASM vs ARM</h3><ul>
+<h3>ASM vs ARM</h3>
+<ul>
 <li>ASM uses pipe for each PS commands</li>
 <li>ARM uses variable to run PS commands</li>
 <li>All ARM PS commands has <code>VM</code> on their names</li>
 </ul>
-<h2 id="Creating-Azure-VM-via-ARM-Templates"><a href="#Creating-Azure-VM-via-ARM-Templates" class="headerlink" title="Creating Azure VM via ARM Templates"></a>Creating Azure VM via ARM Templates</h2><ul>
-<li>Steps:<ul>
+<h2>Creating Azure VM via ARM Templates</h2>
+<ul>
+<li>Steps:
+<ul>
 <li>Create template file</li>
 <li>Create parameters file</li>
 <li>Create resource group</li>
@@ -338,17 +510,20 @@
 <li>ARM parameters file size is allowed up to 64KB</li>
 <li>Required elements: <code>$schema</code>, <code>resources</code>, <code>contentVersion</code></li>
 </ul>
-<h2 id="Creating-Azure-VM-from-Custom-Images"><a href="#Creating-Azure-VM-from-Custom-Images" class="headerlink" title="Creating Azure VM from Custom Images"></a>Creating Azure VM from Custom Images</h2><ul>
+<h2>Creating Azure VM from Custom Images</h2>
+<ul>
 <li>Prepare VM: <code>sysprep</code></li>
 <li>Prepare VM in .VHD: Generation 1 VHD, fixed size</li>
 <li>Create storage container</li>
 <li>Upload .VHD: <code>Add-AzureRmVhd</code></li>
 <li>Create VM with .VHD</li>
 </ul>
-<h2 id="Creating-Azure-VM-for-Linux"><a href="#Creating-Azure-VM-for-Linux" class="headerlink" title="Creating Azure VM for Linux"></a>Creating Azure VM for Linux</h2><ul>
+<h2>Creating Azure VM for Linux</h2>
+<ul>
 <li>Azure SLA only applies to endorsed distros</li>
 <li>Non-endorsed distros may run on Azure, as long as they meet requirements</li>
-<li>Endorsed distros<ul>
+<li>Endorsed distros
+<ul>
 <li>CentOS 6.3+</li>
 <li>CoreOS 494.4.0+</li>
 <li>Debian 7.9+, 8.2+</li>
@@ -384,7 +559,8 @@
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 1 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="Virtual-Machines-On-Prem-vs-On-Azure"><a href="#Virtual-Machines-On-Prem-vs-On-Azure" class="headerlink" title="Virtual Machines On-Prem vs On-Azure"></a>Virtual Machines On-Prem vs On-Azure</h2><table>
+<h2>Virtual Machines On-Prem vs On-Azure</h2>
+<table>
 <thead>
 <tr>
 <th>특징</th>
@@ -430,26 +606,35 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Azure-VM-에-적합한-용도"><a href="#Azure-VM-에-적합한-용도" class="headerlink" title="Azure VM 에 적합한 용도"></a>Azure VM 에 적합한 용도</h2><ul>
+<h2>Azure VM 에 적합한 용도</h2>
+<ul>
 <li>Highly available service</li>
 <li>Unpredictable growth or short-term increased</li>
 <li>Spiking workloads</li>
 <li>Steady workloads</li>
 <li>Periodic workloads</li>
 </ul>
-<h2 id="Azure-VM-에-적합하지-않은-용도"><a href="#Azure-VM-에-적합하지-않은-용도" class="headerlink" title="Azure VM 에 적합하지 않은 용도"></a>Azure VM 에 적합하지 않은 용도</h2><ul>
+<h2>Azure VM 에 적합하지 않은 용도</h2>
+<ul>
 <li>Low volume or limited growth</li>
-<li>Regulated environment &ndash; hybrid might be suitable</li>
+<li>Regulated environment – hybrid might be suitable</li>
 </ul>
-<h2 id="Azure-VM-이-지원하지-않는-기능들"><a href="#Azure-VM-이-지원하지-않는-기능들" class="headerlink" title="Azure VM 이 지원하지 않는 기능들"></a>Azure VM 이 지원하지 않는 기능들</h2><ul>
-<li>Multipath I/O</li>
-<li><p>Network Load Balancing</p>
+<h2>Azure VM 이 지원하지 않는 기능들</h2>
+<ul>
+<li>
+<p>Multipath I/O</p>
 </li>
-<li><p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
+<li>
+<p>Network Load Balancing</p>
 </li>
-<li><p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
+<li>
+<p>추가 소프트웨어는 별도 라이센스 비용이 필요할 수도 있음</p>
 </li>
-<li><p>지원하는 Windows Server Role:</p>
+<li>
+<p>OS 업그레이드 지원하지 않음. 대신 추가로 이미 업그레이드 된 VM 설치후 기존 VM을 이전해야 함.</p>
+</li>
+<li>
+<p>지원하는 Windows Server Role:</p>
 <ul>
 <li>Application Server Role</li>
 <li>Web Server Role</li>
@@ -458,7 +643,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="Azure-VM-사이즈"><a href="#Azure-VM-사이즈" class="headerlink" title="Azure VM 사이즈"></a>Azure VM 사이즈</h2><table>
+<h2>Azure VM 사이즈</h2>
+<table>
 <thead>
 <tr>
 <th>Level</th>
@@ -495,7 +681,8 @@
 <li><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables" target="_blank" rel="external">https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#size-tables</a> 꼭 읽어볼 것</li>
 <li>ACU (Azure Compute Unit) 는 A1 사이즈를 100으로 놓고 다른 사이즈의 SKU를 비교함.</li>
 </ul>
-<h2 id="Azure-Cost-Estimator-Tool"><a href="#Azure-Cost-Estimator-Tool" class="headerlink" title="Azure Cost Estimator Tool"></a>Azure Cost Estimator Tool</h2><ul>
+<h2>Azure Cost Estimator Tool</h2>
+<ul>
 <li>기존 하드웨어와 장비를 15분 정도 스캔</li>
 <li>가장 잘 맞는 VM 사이즈 추천</li>
 <li>각 인스턴스당 30일 기준 비용 산정</li>

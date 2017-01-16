@@ -67,12 +67,15 @@
     <blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 5 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="Managing-VMs"><a href="#Managing-VMs" class="headerlink" title="Managing VMs"></a>Managing VMs</h2><ul>
-<li>VM Agent Extensions:<ul>
+<h2>Managing VMs</h2>
+<ul>
+<li>VM Agent Extensions:
+<ul>
 <li>To extend VM functionality and management operations</li>
 <li>Can install multiple extensions on a VM</li>
 <li>Desired State Configuraiton, Chef, Puppet</li>
-<li>VM Agent<ul>
+<li>VM Agent
+<ul>
 <li>Secure and lightweight process</li>
 <li>To bootstrap (install/configure/removes) additional extensions</li>
 <li>Offered by MS and partners</li>
@@ -80,69 +83,82 @@
 </li>
 </ul>
 </li>
-<li>VM Access Agent Extension:<ul>
+<li>VM Access Agent Extension:
+<ul>
 <li>Create, update, reset user information in Windows VM</li>
 </ul>
 </li>
-<li>Azure Cross-Platform CLI<ul>
+<li>Azure Cross-Platform CLI
+<ul>
 <li>Primarily used for Linux VMs</li>
 <li>Can be used for Windows VMs</li>
 </ul>
 </li>
-<li>RDP<ul>
+<li>RDP
+<ul>
 <li>For Windows VMs</li>
 </ul>
 </li>
-<li>SSH<ul>
+<li>SSH
+<ul>
 <li>Form Linux VMs</li>
 <li>PuTTY for Windows, OpenSSH for Linux</li>
 <li>SSH endpoint is always created, regardless to use or not</li>
 </ul>
 </li>
 </ul>
-<h2 id="Configuration-Management-Tools"><a href="#Configuration-Management-Tools" class="headerlink" title="Configuration Management Tools"></a>Configuration Management Tools</h2><ul>
-<li>Desired State Configuration (DSC)<ul>
+<h2>Configuration Management Tools</h2>
+<ul>
+<li>Desired State Configuration (DSC)
+<ul>
 <li>Supports both Windows (WMF) and Linux (OMI)</li>
 <li>Supports ARM templates, PS and XPLAT-CLI</li>
 <li>Consistently deploy, reliably monitor, and automatically update the desired state of all resources</li>
 </ul>
 </li>
-<li>Chef<ul>
+<li>Chef
+<ul>
 <li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
 <li>Promotes infrastructure as code</li>
 <li>Provides declarative management solution</li>
 <li>Enables policy-based management</li>
 </ul>
 </li>
-<li>Puppet<ul>
+<li>Puppet
+<ul>
 <li>Automate entire lifecycle of Azure infrastructure from provisioning through app deployment</li>
 <li>Supports easy-to-understand declarative language</li>
 <li>Enforces desired state on systems</li>
 <li>Puppet Forge supports ready-to-use modules</li>
 </ul>
 </li>
-<li>XPLAT-CLI<ul>
+<li>XPLAT-CLI
+<ul>
 <li>Can be installed through npm, package installer or Docker host</li>
 <li>azure <code>topic</code> <code>verb</code> <code>options</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="VM-Monitoring"><a href="#VM-Monitoring" class="headerlink" title="VM Monitoring"></a>VM Monitoring</h2><ul>
+<h2>VM Monitoring</h2>
+<ul>
 <li>Agent VM extension</li>
 <li>Boot diagnostics</li>
-<li>Admin can monitor diagnostic logging for:<ul>
+<li>Admin can monitor diagnostic logging for:
+<ul>
 <li>Basic metrics, network &amp; web metrics, and .NET metrics</li>
 <li>Windows event system logs, security logs, application logs</li>
 <li>Diagnostic infrastructure logs</li>
 </ul>
 </li>
-<li>Alerts:<ul>
+<li>Alerts:
+<ul>
 <li>Combination of metric, condition, threshold and period</li>
 <li>Email notification and Webhook support</li>
 <li>Email is sent when rule becomes active and when the alert condition is resolved</li>
 </ul>
 </li>
-<li>All data is<ul>
+<li>All data is
+<ul>
 <li>Displayed in Portal</li>
 <li>Configurable</li>
 <li>Stored in Azure Storage (tables and blobs)</li>

@@ -67,7 +67,8 @@
     <blockquote>
 <p><a href="https://openedx.microsoft.com" target="_blank" rel="external">https://openedx.microsoft.com</a> 에서 제공하는 무료 강좌인 <a href="https://openedx.microsoft.com/courses/course-v1:Microsoft+AZURE202x+2016_T1/about" target="_blank" rel="external">Microsoft Azure Virtual Machines</a> 의 모듈 4 부분에 대한 정리입니다.</p>
 </blockquote>
-<h2 id="VM-Disk-Types"><a href="#VM-Disk-Types" class="headerlink" title="VM Disk Types"></a>VM Disk Types</h2><ul>
+<h2>VM Disk Types</h2>
+<ul>
 <li>All VMs have at least 2 disks - OS disk and temp disk. They can have 1+ data disk</li>
 <li>Disk are stored as .vhd and up to 1023GB</li>
 <li>OS disk: SATA drive and labelled as C by default</li>
@@ -75,21 +76,25 @@
 <li>Data disk: SCSI drive and labelled with my choice, stored in BLOB storage</li>
 <li>Depending on VM size, temp disk size and number of data disk are determined</li>
 </ul>
-<h2 id="VM-Disks-Management"><a href="#VM-Disks-Management" class="headerlink" title="VM Disks Management"></a>VM Disks Management</h2><ul>
+<h2>VM Disks Management</h2>
+<ul>
 <li>Attach, remove or modify data disk</li>
-<li>Modify settings<ul>
+<li>Modify settings
+<ul>
 <li>caching behaviour</li>
 <li>size</li>
 </ul>
 </li>
-<li>Storage spaces in VMs<ul>
+<li>Storage spaces in VMs
+<ul>
 <li>Increase I/O throughput</li>
 <li>Volume larger than 1TB</li>
 </ul>
 </li>
 <li>Through portal</li>
-<li>Through PowerShell &ndash; <code>Add-AzureDataDisk</code> (ASM), <code>Add-AzureVMDataDisk</code> (ARM)</li>
-<li>Good to know<ul>
+<li>Through PowerShell – <code>Add-AzureDataDisk</code> (ASM), <code>Add-AzureVMDataDisk</code> (ARM)</li>
+<li>Good to know
+<ul>
 <li>VM size determines number of data disks to Attach</li>
 <li>Premium storage needs DS/FS/GS series VM</li>
 <li>New/empty disk is created when attaching</li>
@@ -99,9 +104,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="Disk-Import-amp-Export"><a href="#Disk-Import-amp-Export" class="headerlink" title="Disk Import &amp; Export"></a>Disk Import &amp; Export</h2><ul>
+<h2>Disk Import &amp; Export</h2>
+<ul>
 <li>Useful to move large amount of data from on-prem hard disk to Azure blob storage (or vice-versa)</li>
-<li>Scenario:<ul>
+<li>Scenario:
+<ul>
 <li>Large amount of data migration to cloud</li>
 <li>Content distribution</li>
 <li>Backup</li>
